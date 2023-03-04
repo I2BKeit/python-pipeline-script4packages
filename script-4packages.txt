@@ -1,0 +1,19 @@
+# Author Ibrehima Keita Devops Engineer US- Silver Spring 
+# Use python script to intall packages 
+pipeline {
+    agent any
+
+    tools {
+        // Declare the Python tool with the name "Python 3.9.0"
+        python 'Python 3.9.0'
+    }
+
+    stages {
+        stage('Install packages') {
+            steps {
+                // Use the declared Python tool to execute the pip command
+                sh "${tool 'python'}/bin/pip install httpd git tree"
+            }
+        }
+    }
+}
